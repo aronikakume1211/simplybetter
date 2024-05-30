@@ -1,0 +1,37 @@
+// General
+// #e5ec8e
+.d-flex {
+    display: flex;
+}
+.flex-wrap{
+    flex-wrap: wrap;
+}
+.gap-20{
+    gap: 20px;
+}
+.gap-30{
+    gap: 30px;
+}
+.gap-40{
+    gap: 40px;
+}
+.gap-50{
+    gap: 50px;
+}
+.gap-60{
+    gap: 60px;
+}
+.flex-column {
+    flex-direction: column;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between
+}
+
+
+@import "_module/productList";
