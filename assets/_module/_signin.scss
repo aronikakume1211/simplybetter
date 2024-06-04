@@ -1,0 +1,197 @@
+$tw-ring-offset-shadow: 0 0 #0000;
+$tw-ring-shadow: 0 0 #0000;
+
+.signin_signout {
+    min-width: 32rem;
+    width: 100%;
+    gap: 0px;
+    border-radius: 6px;
+    opacity: 0px;
+    background: #FFFFFF;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    max-width: 32rem;
+    width: 100%;
+
+    #signin_message,
+    #signup_message {
+        color: #E14900;
+        text-align: center;
+        width: 100%;
+        font-size: 12px;
+        font-family: Apercu-regular, sans-serif;
+        padding: 0;
+        margin: 0;
+    }
+
+    #signin_success_message,
+    #signup_success_message {
+        color: #004008;
+        text-align: center;
+        width: 100%;
+        font-size: 12px;
+        font-family: Apercu-regular, sans-serif;
+        padding: 0;
+        margin: 0;
+    }
+
+    .signin_signout_form {
+        display: none;
+    }
+
+    .signin_signout_form.active_form {
+        display: block;
+        width: 100%;
+    }
+
+    .btn_tabs_container {
+        position: absolute;
+        top: 0;
+        display: flex;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        button {
+            // width: 87px;
+            // height: 32px;
+            gap: 0px;
+            box-shadow: 0px 2px 1.6px 0px #0000001A;
+            background-color: #FFFFFF;
+            padding: 0px 10px;
+            border: none;
+            font-family: "Lexend", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 22px;
+            letter-spacing: -0.02em;
+            text-align: center;
+            color: #7F7F7F;
+            border-radius: 0;
+
+            padding: 0.5rem 1rem;
+
+
+
+            &:focus {
+                outline: 0px auto -webkit-focus-ring-color;
+
+            }
+        }
+
+        button.active_btn {
+            background-color: #004008;
+            color: #fff
+        }
+    }
+
+
+    .signin_info {
+        margin-top: 55px;
+        // width: 260px;
+        // height: 32px;
+        font-family: "Lexend", sans-serif;
+        font-size: 18px;
+        line-height: 16px;
+        letter-spacing: -0.02em;
+        text-align: center;
+        color: #374151;
+
+        font-weight: 500;
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+        margin-bottom: 0.75rem;
+
+
+    }
+
+    .username_container,
+    .password_container,
+    .submit_container {
+        width: 100%;
+    }
+
+    .username_label,
+    .password_label {
+        font-family: 'Lexend', sans-serif;
+        font-size: 16px;
+        line-height: 16px;
+        letter-spacing: -0.02em;
+        text-align: left;
+        color: #1F1F1F;
+
+        line-height: 1.5rem;
+        font-weight: 500;
+        font-size: .875rem;
+        margin-bottom: 5px;
+        max-width: 100%;
+    }
+
+    #username,
+    #password {
+        width: 100%;
+        border: 0.5px solid #A1A1A1;
+        background: #FFFFFF;
+
+        line-height: 1.5rem;
+        font-size: .875rem;
+        padding-bottom: 0.375rem;
+        padding-top: 0.375rem;
+        border-radius: 0.375rem;
+        font-family: "Lexend", sans-serif;
+        font-family: 400;
+        color: rgb(17, 24, 39);
+    }
+
+    .login_terms_privacy {
+        font-family: 'Lexend', sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 17px;
+        letter-spacing: -0.02em;
+        text-align: center;
+
+        a {
+            color: #004008;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+    }
+    .already_account_holder{
+        font-size: 17px;
+        line-height: 24px;
+        span{
+            font-size: 16px;
+        }
+    }
+
+    .submit_btn {
+        width: 100%;
+        // height: 32px;
+        background: #004008;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #FFFFFF;
+        border: none !important;
+        
+        border-radius: .375rem;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        padding: 0.5rem 0.75rem;
+        font-family: "Lexend", sans-serif;
+        font-weight: 400;
+
+
+        &:hover {
+            background: #004008;
+            color: #FFFFFF;
+        }
+    }
+}

@@ -1,0 +1,113 @@
+// General
+// #e5ec8e
+@import url('https://fonts.cdnfonts.com/css/apercu-pro');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+
+@font-face {
+    font-family: "Apercu-regular";
+    src: url("../assets/fonts/Apercu_Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Apercu-Bold";
+    src: url("../assets/fonts/Apercu_Bold.ttf") format("truetype");
+}
+
+body {
+    font-family: Apercu-regular, sans-serif;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.gap-20 {
+    gap: 20px;
+}
+
+.gap-30 {
+    gap: 30px;
+}
+
+.gap-40 {
+    gap: 40px;
+}
+
+.gap-50 {
+    gap: 50px;
+}
+
+.gap-60 {
+    gap: 60px;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.justify-between {
+    justify-content: space-between
+}
+
+#selected_country_name {
+    font-family: "Apercu Bold", Sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: 0.15000000596046448px;
+    text-align: left;
+    color: #233332;
+
+}
+
+#mebrik_timer {
+    color: #FFFFFF;
+    font-family: 'Apercu Regular', Sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    margin-top: 3px;
+    color: #FFFFFF;
+    font-family: "Lexend Regular Font", Sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.1px;
+
+    @media screen and (max-width: 768px) {
+        font-size: 15px;
+    }
+}
+
+.Money_back::before {
+    display: inline-block;
+    content: " ";
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="#9ca3af" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true" class="tw-h-5 tw-w-5 tw-text-gray-400"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>');
+    // background-size: 28px 28px;
+    height: 1.25rem;
+    width: 1.25rem;
+    margin-right: 0px;
+    background-repeat: no-repeat;
+    /* scale: 0.5; */
+    color: #9ca3af;
+    position: absolute;
+    left: 17px;
+    margin-top: 3px
+}
+
+
+@import "_module/productList";
+@import "_module/testimonials";
+@import "_module/signin";
+@import "_module/location";
