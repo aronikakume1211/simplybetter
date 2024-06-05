@@ -93,7 +93,7 @@ class Location_Popup extends \Elementor\Widget_Base
                             <ul class="popular_cities_list d-flex flex-wrap gap-40 ">
                                 <?php foreach ($popular_cities as $popular_city) : ?>
                                     <li class="popular_city_list_item">
-                                        <img src="<?php echo $popular_city['image']['url']; ?>" alt="<?php echo $popular_city['city_name']; ?>">
+                                        <img src="<?php echo $popular_city['image']['url']; ?>" width="78" height="78" alt="country image for <?php echo $popular_city['city_name']; ?>">
                                         <p><?php echo $popular_city['city_name']; ?></p>
                                     </li>
                                 <?php endforeach; ?>

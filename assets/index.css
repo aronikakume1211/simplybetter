@@ -134,7 +134,6 @@ body {
   top: -6px;
   left: -24px;
   gap: 0px;
-  border-radius: 2px;
   border: 0.6px 0px 0px 0px;
   opacity: 0px;
   transform: rotateX("10.06deg");
@@ -146,6 +145,8 @@ body {
   padding-top: 0.25rem;
   padding-left: 1.75rem;
   padding-right: 1rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
 }
 @media screen and (max-width: 768px) {
   .custom_woocommerce_products .custom_woocommerce_product .bulk_saving_banner {
@@ -183,7 +184,7 @@ body {
 .product_contents .custom_product_title {
   width: 100%;
   font-family: "Lexend", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   text-align: left;
   color: #374151;
   width: 100%;
@@ -232,16 +233,15 @@ body {
   margin-bottom: 25px;
 }
 .product_contents .delivery_is_free {
-  width: 110px;
   height: 18px;
   gap: 0px;
   opacity: 0px;
-  font-family: Apercu-regular, sans-serif;
-  font-size: 15px;
+  font-family: "Lexend", sans-serif;
+  font-size: 17px;
   font-weight: 400;
-  line-height: 18.69px;
+  line-height: 24px;
   text-align: left;
-  color: #000;
+  color: #3d3d3d;
 }
 .product_contents .price_container {
   margin-top: 20px;
@@ -276,10 +276,10 @@ body {
   position: absolute;
   top: -3px;
   font-size: 17px;
-  left: 1px;
+  left: -1px;
 }
 .product_contents .price_container .prices bdi {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
   line-height: 28px;
   text-align: left;
@@ -292,7 +292,7 @@ body {
   text-decoration: none;
 }
 .product_contents .price_container .prices ins bdi {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
   line-height: 28px;
   text-align: left;
@@ -529,6 +529,11 @@ body {
   position: relative;
   max-width: 32rem;
   width: 100%;
+}
+@media screen and (max-width: 567px) {
+  .signin_signout {
+    min-width: 100%;
+  }
 }
 .signin_signout #signin_message,
 .signin_signout #signup_message {

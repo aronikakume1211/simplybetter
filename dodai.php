@@ -33,20 +33,49 @@ add_action('wp_enqueue_scripts', 'test_plugin_scripts');
 
 function test_plugin_scripts()
 {
-    wp_enqueue_style('index-style',  plugins_url('assets/index.css', __FILE__));
-    wp_enqueue_script('testimonail-script',  plugins_url('assets/js/testimonial.js', __FILE__));
-    wp_enqueue_script('location-script',  plugins_url('assets/js/location.js', __FILE__));
-    wp_enqueue_script('countdown-script',  plugins_url('assets/js/countdown.js', __FILE__));
-    wp_enqueue_script('jquery-custom-script', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js');
-    wp_enqueue_script('splidejs', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js');
-    wp_enqueue_style('splidecss', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css');
-    wp_enqueue_script('signin-signout-script',  plugins_url('assets/js/signin-signout.js', __FILE__));
-    // wp_enqueue_style('fontawesome',  '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">');
-    // wp_localize_script('custom-login-script', 'ajax_login_object', array(
-    //     'ajaxurl' => admin_url('admin-ajax.php'),
-    //     'redirecturl' => home_url(),
-    //     'loadingmessage' => __('Sending user info, please wait...')
-    // ));
+
+    // Dequeue default jquery
+    wp_dequeue_script( 'jquery-core' );
+    wp_dequeue_script( 'jquery-migrate' );
+    wp_dequeue_script( 'jquery-blockui' );
+
+    // Registering styles
+    wp_register_style('index-style', plugins_url('assets/index.css', __FILE__));
+    // wp_register_style('splidecss', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css', array(), null);
+
+    // Registering scripts
+    wp_register_script('jquery-custom-script', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js', array(), null, true);
+    wp_register_script('splidejs', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js', array('jquery-custom-script'), null, true);
+    wp_register_script('testimonail-script', plugins_url('assets/js/testimonial.js', __FILE__), array('jquery-custom-script'), null, true);
+    wp_register_script('location-script', plugins_url('assets/js/location.js', __FILE__), array('jquery-custom-script'), null, true);
+    wp_register_script('countdown-script', plugins_url('assets/js/countdown.js', __FILE__), array('jquery-custom-script'), null, true);
+    wp_register_script('signin-signout-script', plugins_url('assets/js/signin-signout.js', __FILE__), array('jquery-custom-script'), null, true);
+
+    // Enqueuing styles
+    wp_enqueue_style('index-style');
+    // wp_enqueue_style('splidecss');
+
+    // Enqueuing scripts
+    if (is_front_page()) {
+        wp_enqueue_script('jquery-custom-script');
+        wp_enqueue_script('splidejs');
+        wp_enqueue_script('testimonail-script');
+    }
+    wp_enqueue_script('location-script');
+    wp_enqueue_script('countdown-script');
+    wp_enqueue_script('signin-signout-script');
+
+    // Function to output Splide CSS in the footer
+    function enqueue_splide_css_in_footer()
+    {
+        if (is_front_page()) {
+?>
+
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" type="text/css" media="all">
+<?php
+        }
+    }
+    add_action('wp_footer', 'enqueue_splide_css_in_footer');
 }
 
 

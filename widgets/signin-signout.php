@@ -101,7 +101,7 @@ class Signin_Signout extends \Elementor\Widget_Base
                     <label for="password" class="password_label"><?php echo esc_html($settings['password_label']); ?></label>
                     <input type="password" id="password" name="password" placeholder="Password" required>
                 </p>
-                <p class="login_terms_privacy">By creating an account you agree to our <a href="https://a2simplybetter.com//tos"> Terms of Service</a> and <a href="https://a2simplybetter.com//tos">Privacy Policy</a></p>
+                <p class="login_terms_privacy">By creating an account you agree to our <a href="https://a2simplybetter.com/terms-conditions/"> Terms of Service</a> and <a href="https://a2simplybetter.com/privacy-policy/">Privacy Policy</a></p>
                 <p class="submit_container">
                     <input type="hidden" id="security" name="security" value="<?php echo wp_create_nonce('ajax-login-nonce'); ?>">
                     <input type="submit" class="submit_btn" value="<?php echo esc_html($settings['submit_text']); ?>">

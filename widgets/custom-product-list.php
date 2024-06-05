@@ -51,7 +51,7 @@ class Custom_Products_List extends \Elementor\Widget_Base
             ?>
                     <li class="custom_woocommerce_product">
                         <ul class="bulk_saving_banner">
-                            <li>₹<?php echo $regular_price - $sale_price; ?> Launch Offer</li>
+                            <li>₹<?php echo $sale_price ?: $regular_price; ?> Launch Offer</li>
                         </ul>
                         <div class="product_image_container">
                             <?php echo  $product->get_image(); ?>
@@ -61,14 +61,14 @@ class Custom_Products_List extends \Elementor\Widget_Base
 
                                 <h3 class="custom_product_title"><?php echo $product->get_name(); ?></h3>
                                 <div class="product_short_description">
-                                    <ul>
+                                    <!-- <ul>
                                         <li>Fresh & Organic Direct from the Farm</li>
                                         <li>100% Pure, Chemical-free, and Farm-fresh</li>
                                         <li>No Added Water, Powder, or Thickneres</li>
                                         <li>Delivered Fresh Within 2 Hours of Milking</li>
-                                    </ul>
+                                    </ul> -->
                                     <?php
-                                    // echo get_the_excerpt();
+                                    echo get_the_excerpt();
                                     ?>
                                 </div>
                                 <div class="hr"></div>
@@ -79,11 +79,11 @@ class Custom_Products_List extends \Elementor\Widget_Base
 
                                 </div>
                             </div>
-                            <?php if (is_user_logged_in()) :
-                                woocommerce_template_loop_add_to_cart(array('product_id' => $product->get_id()));
-                            else : ?>
-                                <a href="https://a2simplybetter.com/signup/" class="btn_not_user">Buy Now</a>
-                            <?php endif; ?>
+                            <?php
+                            woocommerce_template_loop_add_to_cart(array('product_id' => $product->get_id()));
+
+                            ?>
+                            <!-- <a href="https://a2simplybetter.com/signup/" class="btn_not_user">Buy Now</a> -->
 
                         </div>
                     </li>
